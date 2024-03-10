@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kata-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kata
+  template:
+    metadata:
+      labels:
+        app: kata
+    spec:
+      containers:
+        - name: kata-container
+          image: kata-image:latest   # Remplacer kata-image:latest par le nom de votre image Docker et la balise correspondante
+          ports:
+            - containerPort: 8080
