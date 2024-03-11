@@ -2,7 +2,6 @@ package com.example.kata.model.po;
 
 import com.example.kata.model.enums.DeliveryMode;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,7 +22,6 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    @NotNull
     private User user;
 
     private LocalDateTime deliveryTime;
